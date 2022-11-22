@@ -5,13 +5,6 @@ Created on Mon Nov 21 17:56:23 2022
 @author: jankl
 """
 
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Nov 21 16:01:41 2022
-
-@author: jankl
-"""
-
 import string
 import requests
 from bs4 import BeautifulSoup
