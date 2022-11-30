@@ -18,7 +18,6 @@ graphs = soup.find_all("script", type="text/javascript")
 for graph in graphs:
     graph = str(graph)
     graph = re.sub(r"\s","",graph)
-    #graph = re.sub(" ","",graph)
     start_text = "title:{text:'"
     start = graph.find(start_text) + len(start_text)
     end_text = "'},subtitle:"
