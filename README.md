@@ -10,3 +10,5 @@ For eg: <A> USA: https://www.worldometers.info/coronavirus/country/us/<br>
 Note that spacing between countries is replaced with dashes <br>
 All first letter is reduced to lower case
 USA becomes us
+
+Edit 1: Issue is fixed by fetching href tags of each country name and storing in a separate list
