@@ -1,14 +1,39 @@
 # Covid-Dashboard-ME-6250
 Covid Dashboard project for ME 6250 Fall 2022
 
-Samannoy:
-Notes:
-1. The country data url needs to be customized for different countries: https://www.worldometers.info/coronavirus/country/india/<br>
-For eg: <A> USA: https://www.worldometers.info/coronavirus/country/us/<br>
-<B> Isle of Man: https://www.worldometers.info/coronavirus/country/isle-of-man/<br>
+- [x] Part 1
 
-Note that spacing between countries is replaced with dashes <br>
-All first letter is reduced to lower case
-USA becomes us
+## Instructions to run the code: <br>
 
-Edit 1: Issue is fixed by fetching href tags of each country name and storing in a separate list
+**Run the main.py from an IDE or from command line and follow the menu-driven instructions on the terminal to fetch data from one or all countries** <br>
+*Libraries imported: requests, re,bs4,tqdm,datetime,pandas*
+
+* The **ScrapeWebsite.py** file is used as the data scraping module that has all included functions and implementations. <br>
+  * It includes the function named **scrape_country** which takes in 2 arguments- country and optional website URL (However, the current version of the code works only with the worldometer website)
+* The **writeJSON.py** file is a custom code that utilizes Pandas library to prepare the JSON file from the scraped data and generates the JSON file with the passed arguments. <br>
+  * The function prepares the JSON file with the data in the following order: Date, TotalDeaths,TotalDeathsNormalized, DailyDeaths, DailyDeathsNormalized
+  * The data is then saved as **(date_of_scraping)_(countryname).JSON**
+* The **main.py** file is a menu driven program for the user to run:
+  * It runs a continuous loop asking the user to enter 1 to scrape one country, 2 to scrape all countries or 0 to exit
+  
+
+
+
+### Challenges faced: ###
+1. The country data url needs to be customized for different countries: <br>
+For eg: <A> https://www.worldometers.info/coronavirus/country/india/<br>
+<B> USA: https://www.worldometers.info/coronavirus/country/us/<br>
+<C> Isle of Man: https://www.worldometers.info/coronavirus/country/isle-of-man/<br>
+
+*Fix:* This issue is fixed by fetching href tags of each country name and storing all country specific URLs in a separate list
+
+2. Not all the 228 countries on the Worldometer website has death data/plots, so we are unable to fetch those data. Also, the population data of all countries are not updated in the specific tag that displays live population count.
+
+This was crashing and exiting the code as soon as the error was found.
+
+*Fix:* Exceptional handling has been implemented with try except statements that throws an error message when the code faces any issue and mentions the country name that faced the issue.
+
+
+- [ ] Part 2
+
+In progress
