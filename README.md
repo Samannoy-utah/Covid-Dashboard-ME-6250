@@ -10,6 +10,7 @@ Covid Dashboard project for ME 6250 Fall 2022
 
 * The **ScrapeWebsite.py** file is used as the data scraping module that has all included functions and implementations. <br>
   * It includes the function named **scrape_country** which takes in 2 arguments- country and optional website URL (However, the current version of the code works only with the worldometer website)
+  * Specifically, **scrape_country** finds all of the instances of scripts with type "text/javascript" to narrow down to the charts on the country-specific page, removes the whitespace, and searches for the known starting and ending keywords for desired information. From there, daily death information and cumulative death information are extracted from their respective graphs.
 * The **writeJSON.py** file is a custom code that utilizes Pandas library to prepare the JSON file from the scraped data and generates the JSON file with the passed arguments. <br>
   * The function prepares the JSON file with the data in the following order: Date, TotalDeaths,TotalDeathsNormalized, DailyDeaths, DailyDeathsNormalized
   * The data is then saved as **(date_of_scraping)_(countryname).JSON**
@@ -31,7 +32,7 @@ For eg: <A> https://www.worldometers.info/coronavirus/country/india/<br>
 
 This was crashing and exiting the code as soon as the error was found.
 
-*Fix:* Exceptional handling has been implemented with try except statements that throws an error message when the code faces any issue and mentions the country name that faced the issue.
+*Fix:* Exception handling has been implemented with try except statements that throws an error message when the code faces any issue and mentions the country name that faced the issue.
 
 
 - [ ] Part 2
