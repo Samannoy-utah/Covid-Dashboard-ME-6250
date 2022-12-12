@@ -38,4 +38,14 @@ This was crashing and exiting the code as soon as the error was found.
 
 - [ ] Part 2
 
-In progress
+## Instructions to run the code: <br>
+
+**Download the zip file in folder 'Part 2'. All the required py files and dependent modules are inside the same folder. 
+Run the pytoHTML.py from an IDE or from command line and it should automatically generate the HTML file named 'CovidDashboard_Samannoy_Jared' inside the HTML folder. Open the HTML file in a browser to test the features** <br>
+
+*Do not delete the assets or jquery folder from inside HTML as it contains all the necessary css files*
+
+* The **pytoHTML.py** file is the main py file to call all plotting functions (Single_country_plotter, Multi_country_plotter)  <br>
+ * The code generates all the scripts and div tags of each plot by using the 'components' functionality of Bokeh
+ * These script and div tags are processed as required and attached in specific div tags of the semi prepared HTML code
+ * After embedding all necessary scripts and div tags, the final HTML file is generated and stored
