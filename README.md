@@ -34,9 +34,9 @@ For eg: <A> https://www.worldometers.info/coronavirus/country/india/<br>
 This was crashing and exiting the code as soon as the error was found.
 
 *Fix:* Exception handling has been implemented with try except statements that throws an error message when the code faces any issue and mentions the country name that faced the issue.
+<br><br><br>
 
-
-- [ ] Part 2
+- [x] Part 2
 
 ## Instructions to run the code: <br>
 
@@ -49,3 +49,24 @@ Run the pytoHTML.py from an IDE or from command line and it should automatically
  * The code generates all the scripts and div tags of each plot by using the 'components' functionality of Bokeh
  * These script and div tags are processed as required and attached in specific div tags of the semi prepared HTML code
  * After embedding all necessary scripts and div tags, the final HTML file is generated and stored
+ 
+* How the project was created:
+  * A basic HTML code was prepared taking help from existing css files of a template (http://www.bootstrapdash.com)
+  * Specific parts(div tags) of the HTML code was noted
+  * The python code was written which reads through all json files in the same root folder and plots total, total normalized, daily and daily normalized data till Dec 11,2022 in separate plots and generates the script and div tags using the custom written python modules
+  * The div tags generated are put inside the specific locations of the HTML file and the the entire HTML is generated using file.write
+ 
+**Features:**
+ * Dropdown button to select countries. Clicking 'Go' updates the plots.
+ * Hover tool added to plots to hover and see any data value
+ * Other important toolbox functionalities include
+ * Slider to scale X-axis and find data within a specific time period
+ * A table containing top 6 countries with highest deaths and their positon on a vector world map
+ 
+
+### Challenges: ###
+1. The uploaded HTML file's dropdown only works for countries starting with A to C and the top 20 countries shown on the dropdwon (for a total of 68 countries)<br>
+2. Our current code can work with all 228 countries, but running with all the 228 json files, produces a HTML file which is very slow to load and crashes. So, it has been tested with 68 countries as a demo
+3. There are some countries like vietnam, that has data discrepancies. So, choosing vietnam shows a warning pop up.
+ 
+ 
