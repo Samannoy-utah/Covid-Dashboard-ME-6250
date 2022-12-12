@@ -59,14 +59,14 @@ Run the pytoHTML.py from an IDE or from command line and it should automatically
 **Features:**
  * Dropdown button to select countries. Clicking 'Go' updates the plots.
  * Hover tool added to plots to hover and see any data value
- * Other important toolbox functionalities include
+ * Other important toolbox functionalities included
  * Slider to scale X-axis and find data within a specific time period
  * A table containing top 6 countries with highest deaths and their positon on a vector world map
  
 
-### Challenges: ###
+### Points to Note: ###
 1. The uploaded HTML file's dropdown only works for countries starting with A to C and the top 20 countries shown on the dropdwon (for a total of 68 countries)<br>
-2. Our current code can work with all 228 countries, but running with all the 228 json files, produces a HTML file which is very slow to load and crashes. So, it has been tested with 68 countries as a demo
+2. Our current code can work with all 228 countries, but running with all the 228 json files, produces a HTML file which is very slow to load and crashes. So, it has been tested with 68 countries as a demo.
 3. There are some countries like vietnam, that has data discrepancies. So, choosing vietnam shows a warning pop up.
  
  
